@@ -63,6 +63,13 @@ services:
         volumes:
             - db_admin_data:/var/www/html
 
+    mailcatcher:
+        networks:
+            - internal_network
+        image: yappabe/mailcatcher
+        ports:
+            - 1025:1025
+            - 1080:1080
 volumes:
     db_admin_data:
     mysql:
